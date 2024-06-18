@@ -17,3 +17,4 @@ jobs:
     - name: Run script
       run: |
         echo "Input to reusable workflow: ${{ github.event.inputs.test-path }}"
+        echo "Input2 to reusable workflow: ${{ github.event.inputs.configuration-path }}"
