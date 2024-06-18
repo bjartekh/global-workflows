@@ -6,6 +6,10 @@ on:
       test-path:
         required: true
         type: string
+    outputs:
+      firstword:
+        description: "The first output string"
+        value: ${{ jobs.triage.outputs.output1 }}
         
 jobs:
   triage:
