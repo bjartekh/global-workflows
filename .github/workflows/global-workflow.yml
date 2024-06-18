@@ -1,0 +1,19 @@
+name: Reusable global workflow
+
+on:
+  workflow_call:
+    inputs:
+      test-path:
+        required: true
+        type: string
+        
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/labeler@v4
+      with:
+        configuration-path: ${{ inputs.test-path }}        
+    - name: Run script
+      run: |
+        echo "Input to reusable workflow: ${{ github.event.inputs.test-path }}"
