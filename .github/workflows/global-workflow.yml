@@ -10,6 +10,8 @@ on:
 jobs:
   triage:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.step1.outputs.firstword }}
     steps:
     - uses: actions/labeler@v4
       with:
@@ -17,3 +19,5 @@ jobs:
     - name: Run script
       run: |
         echo "Input to reusable workflow: ${{ inputs.test-path }}"
+    - id: step1
+      run: echo "firstword=hello" >> $GITHUB_OUTPUT
