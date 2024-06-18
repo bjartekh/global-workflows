@@ -17,7 +17,7 @@ jobs:
     outputs:
       output1: ${{ steps.step1.outputs.firstword }}
     steps:
-    - uses: actions/labeler@v4
+    - uses: actions/labeler@v5
       with:
         configuration-path: ${{ inputs.test-path }}        
     - name: Run script
